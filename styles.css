@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    max-width: 400px;
+    width: 90%;
+}
+
+.timer {
+    font-size: 5rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    color: #2d3436;
+}
+
+.controls button {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#startPause {
+    background-color: #00b894;
+}
+
+#startPause:hover {
+    background-color: #00a187;
+    transform: translateY(-1px);
+}
+
+#reset {
+    background-color: #ff7675;
+}
+
+#reset:hover {
+    background-color: #e66767;
+    transform: translateY(-1px);
+}
+
+#status-text {
+    font-size: 1.1rem;
+    color: #636e72;
+    margin: 1rem 0;
+}
+
+#toggleMode {
+    background-color: #6c5ce7;
+    transition: all 0.2s ease;
+}
+
+#toggleMode.work-mode {
+    background-color: #fdcb6e;
+}
+
+#toggleMode.rest-mode {
+    background-color: #6c5ce7;
+}
+
+#toggleMode:hover.work-mode {
+    background-color: #f0b445;
+    transform: translateY(-1px);
+}
+
+#toggleMode:hover.rest-mode {
+    background-color: #5f4fd4;
+    transform: translateY(-1px);
+} 
