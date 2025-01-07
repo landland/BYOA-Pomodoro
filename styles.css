@@ -14,9 +14,12 @@ body {
     padding: 2.5rem;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    max-width: 400px;
+    max-width: 600px;
     width: 90%;
     position: relative;
+    margin: 0 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .timer {
@@ -26,36 +29,43 @@ body {
     color: #2d3436;
 }
 
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto;
+}
+
 .controls button {
-    font-size: 1rem;
-    margin: 0 0.5rem;
-    padding: 0.75rem 1.25rem;
-    cursor: pointer;
-    color: white;
+    width: 100%;
+    padding: 1rem;
     border: none;
     border-radius: 8px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 #startPause {
     background-color: #00b894;
-}
-
-#startPause:hover {
-    background-color: #00a187;
-    transform: translateY(-1px);
+    color: white;
 }
 
 #reset {
     background-color: #ff7675;
+    color: white;
 }
 
-#reset:hover {
-    background-color: #e66767;
-    transform: translateY(-1px);
+#addTime {
+    background-color: #a8a8a8;
+    color: white;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 #status-text {
@@ -186,4 +196,16 @@ body {
 .focus-display.has-focus {
     background-color: rgba(253, 203, 110, 0.1);
     border-left: 4px solid #fdcb6e;
+}
+
+@media (min-width: 768px) {
+    .controls {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .controls button {
+        width: auto;
+        padding: 1rem 2rem;
+    }
 } 
