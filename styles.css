@@ -16,6 +16,7 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     max-width: 400px;
     width: 90%;
+    position: relative;
 }
 
 .timer {
@@ -64,8 +65,29 @@ body {
 }
 
 #toggleMode {
-    background-color: #6c5ce7;
-    transition: all 0.2s ease;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+#toggleMode svg {
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+#toggleMode .moon-icon {
+    display: none;
 }
 
 #toggleMode.work-mode {
@@ -76,12 +98,92 @@ body {
     background-color: #6c5ce7;
 }
 
-#toggleMode:hover.work-mode {
+#toggleMode.rest-mode .sun-icon {
+    display: none;
+}
+
+#toggleMode.rest-mode .moon-icon {
+    display: block;
+}
+
+#toggleMode:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.modal-content input {
+    width: calc(100% - 2rem);
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: #fdcb6e;
+}
+
+.modal-content button {
+    padding: 0.8rem 1.5rem;
+    background-color: #fdcb6e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.modal-content button:hover {
     background-color: #f0b445;
     transform: translateY(-1px);
 }
 
-#toggleMode:hover.rest-mode {
-    background-color: #5f4fd4;
-    transform: translateY(-1px);
+.focus-display {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    color: #2d3436;
+    border-radius: 4px;
+    font-weight: 500;
+    min-height: 1.2rem;
+}
+
+.focus-display.has-focus {
+    background-color: rgba(253, 203, 110, 0.1);
+    border-left: 4px solid #fdcb6e;
 } 
